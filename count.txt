@@ -1,0 +1,13 @@
+import re
+from collections import Counter
+
+with open('example.txt', 'r') as file:
+   words = re.findall(r'\w+', file.read().lower())
+   counts = Counter(words)
+   longest_word = max(words, key=len)
+   print("The words are given in that paragraph:", words)
+   print("The counting is:",counts)
+   print("The longest word is: '{longest_word}' (Length: {len(longest_word)})")
+   reversed_word = longest_word[::-1]
+   print("The longest word is: '{longest_word}'")
+   print("The reversed word is: '{reversed_word}'")
